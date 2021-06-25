@@ -1,0 +1,124 @@
+
+
+<script>
+function cmd(){
+	var i = document.getElementById("in1").value
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET","http://192.168.43.98/cgi-bin/docker.py?x=" + i,true);
+	xhr.send();
+	xhr.onload=function(){
+		var output=xhr.responseText;
+		document.getElementById("d1").innerHTML=output;
+		output.style.textAlign= "center";
+	}
+ output.style.textAlign= "center";
+
+}
+
+</script>
+ <div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+<style>
+.center{
+	margin:auto;
+	width:60%;
+	border: 2px dashed #000000;
+	padding: 10px;
+	}
+body{
+
+background: url("docker.jpg");
+background-size: cover;
+#position: absolute;
+#opacity: 0.75;
+z-index:-1;
+}
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1E90FF;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color:#00BFFF }
+
+.button:active {
+  background-color:#00BFFF;
+  box-shadow: 0 2.5px #666;
+  transform: translateY(4px);
+}
+h1 {text-align: center;} 
+
+
+	
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 14px;
+}
+</style>
+</head>
+
+
+
+
+<h1>Welcome to DockWeb</h1>
+
+
+<h2>[root@localhost~] <input id="in1"/> ****AN INTERACTIVE WEBAPP FOR DOCKER****</h2>
+
+
+</html>
+
+
+
+<p><button class="button" onclick="cmd()">submit </button></p>
+
+<br />
+<pre>
+<div id="d1" class="center"  >here we have output.. </div>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
